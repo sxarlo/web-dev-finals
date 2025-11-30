@@ -12,15 +12,22 @@ export function Navbar1() {
   return (
     <header className="w-full border-b bg-background">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4">
-        <Link href="/" className="text-xl font-semibold">Brand</Link>
-        <nav className="hidden md:flex gap-8">
-          <Link href="#">Features</Link>
-          <Link href="#">Pricing</Link>
-          <Link href="#">About</Link>
-          <Link href="#">Contact</Link>
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/lookback_logo.jpg"
+            alt="Brand Logo"
+            width={200}
+            height={200}
+          />
+        </Link>
+        <nav className="hidden md:flex gap-8 font-medium">
+          <Link href="#" className="hover:text-primary transition-colors">Home</Link>
+          <Link href="#" className="hover:text-primary transition-colors">About</Link>
+          <Link href="#" className="hover:text-primary transition-colors">Drinks</Link>
+          <Link href="#" className="hover:text-primary transition-colors">Contact</Link>
         </nav>
         <div className="hidden md:block">
-          <Button size="sm">Get Started</Button>
+          <Button size="sm">Login/Register</Button>
         </div>
         <button className="md:hidden" onClick={() => setOpen(!open)}>
           {open ? <X /> : <Menu />}
@@ -47,23 +54,23 @@ export function HeroSection1() {
       <div className="px-4 mx-auto max-w-7xl flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
         {/* Left */}
         <div className="flex-1 flex flex-col gap-6">
-          <p className="text-sm uppercase tracking-widest text-muted-foreground">Hero Section</p>
+          <p className="text-sm uppercase tracking-widest text-muted-foreground">Who are we?</p>
           <h1 id="hero-heading" className="text-4xl font-bold">
-            Headline that solves users main problem
+            Welcome to LookBack - Your Ultimate Drink Companion
           </h1>
           <p className="text-muted-foreground text-lg">
-            Follow with one or two sentences that expand on your value proposition. Focus on key benefits and address why users should take action now.
+            We serve moments and create memories. Discover, share, and enjoy your favorite drinks with LookBack.
           </p>
           <div className="flex gap-3 mt-4">
-            <Button>Get Started</Button>
-            <Button variant="ghost">Explore <ArrowRight /></Button>
+            <Button>About</Button>
+            <Button variant="ghost">Explore our drinks<ArrowRight /></Button>
           </div>
         </div>
 
         {/* Right */}
         <div className="flex-1 relative w-full h-80 lg:h-[400px]">
           <Image
-            src="https://ui.shadcn.com/placeholder.svg"
+            src="/lookback_hero_img.png"
             alt="Hero section visual"
             fill
             className="h-full w-full object-cover rounded-xl"
@@ -77,29 +84,36 @@ export function HeroSection1() {
 // ================= Bento Grid =================
 export function BentoGrid1() {
   const items = [
-    { title: "Feature One", description: "Brief description of feature one.", image: "https://ui.shadcn.com/placeholder.svg" },
-    { title: "Feature Two", description: "Brief description of feature two.", image: "https://ui.shadcn.com/placeholder.svg" },
-    { title: "Feature Three", description: "Brief description of feature three.", image: "https://ui.shadcn.com/placeholder.svg" },
-    { title: "Feature Four", description: "Brief description of feature four.", image: "https://ui.shadcn.com/placeholder.svg" },
+    { image: "/img1.png" },
+    { image: "/img2.png" },
+    { image: "/img3.png" },
+    { image: "/img4.png" },
   ];
 
   return (
     <section className="bg-background py-20">
       <div className="px-4 mx-auto max-w-7xl">
-        <h2 className="text-2xl font-bold mb-8">Our Features</h2>
+        
+        <h2 className="text-3xl font-bold">Our Galleries</h2>
+        <p className="text-muted-foreground mb-8">
+          A collection of our best and amazing customers.
+        </p>
+
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {items.map((item, index) => (
-            <div key={index} className="flex flex-col gap-4 rounded-xl border p-4">
-              <div className="relative w-full h-40">
+            <div
+              key={index}
+              className="flex flex-col gap-4 rounded-xl border p-4"
+            >
+              {/* Equal-size Image Container */}
+              <div className="relative w-full aspect-square overflow-hidden rounded-lg">
                 <Image
                   src={item.image}
-                  alt={item.title}
+                  alt={`Gallery image ${index + 1}`}
                   fill
-                  className="h-full w-full object-cover rounded-lg"
+                  className="object-cover rounded-md"
                 />
               </div>
-              <h3 className="text-lg font-semibold">{item.title}</h3>
-              <p className="text-muted-foreground text-sm">{item.description}</p>
             </div>
           ))}
         </div>
@@ -107,6 +121,7 @@ export function BentoGrid1() {
     </section>
   );
 }
+
 
 // ================= Contact Section =================
 export function ContactSection1() {
