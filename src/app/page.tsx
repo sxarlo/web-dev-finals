@@ -7,7 +7,7 @@ import { Button } from "~/components/ui/button";
 import { ArrowRight, Menu, X } from "lucide-react";
 
 // ================= Navbar =================
-export function Navbar1() {
+function Navbar1() {
   const [open, setOpen] = useState(false);
   return (
     <header className="w-full border-b bg-background">
@@ -48,7 +48,7 @@ export function Navbar1() {
 }
 
 // ================= Hero Section =================
-export function HeroSection1() {
+function HeroSection1() {
   return (
     <section className="bg-background py-20" aria-labelledby="hero-heading">
       <div className="px-4 mx-auto max-w-7xl flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
@@ -82,7 +82,7 @@ export function HeroSection1() {
 }
 
 // ================= Bento Grid =================
-export function BentoGrid1() {
+function BentoGrid1() {
   const items = [
     { image: "/img1.png" },
     { image: "/img2.png" },
@@ -122,12 +122,12 @@ export function BentoGrid1() {
   );
 }
 
-
 // ================= Contact Section =================
-export function ContactSection1() {
+function ContactSection1() {
   return (
     <section className="bg-background py-20">
       <div className="px-4 mx-auto max-w-7xl flex flex-col lg:flex-row gap-12 lg:gap-16">
+        
         {/* Left */}
         <div className="flex-1 flex flex-col gap-6">
           <h2 className="text-3xl font-bold">Get in Touch</h2>
@@ -156,6 +156,7 @@ export function ContactSection1() {
             <Button type="submit">Send Message</Button>
           </form>
         </div>
+
       </div>
     </section>
   );
