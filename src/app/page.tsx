@@ -9,6 +9,7 @@ import { ArrowRight, Menu, X } from "lucide-react";
 // ================= Navbar =================
 function Navbar1() {
   const [open, setOpen] = useState(false);
+
   return (
     <header className="w-full border-b bg-background">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4">
@@ -20,15 +21,21 @@ function Navbar1() {
             height={200}
           />
         </Link>
+
         <nav className="hidden md:flex gap-8 font-medium">
           <Link href="#" className="hover:text-primary transition-colors">Home</Link>
           <Link href="#" className="hover:text-primary transition-colors">About</Link>
           <Link href="#" className="hover:text-primary transition-colors">Drinks</Link>
           <Link href="#" className="hover:text-primary transition-colors">Contact</Link>
         </nav>
+
+        {/* Correct Login/Register button */}
         <div className="hidden md:block">
-          <Button size="sm">Login/Register</Button>
+          <Link href="/login">
+            <Button size="sm">Login / Register</Button>
+          </Link>
         </div>
+
         <button className="md:hidden" onClick={() => setOpen(!open)}>
           {open ? <X /> : <Menu />}
         </button>
@@ -40,7 +47,10 @@ function Navbar1() {
           <Link href="#">Pricing</Link>
           <Link href="#">About</Link>
           <Link href="#">Contact</Link>
-          <Button className="mt-2 w-full">Get Started</Button>
+
+          <Link href="/login">
+            <Button className="mt-2 w-full">Login / Register</Button>
+          </Link>
         </nav>
       )}
     </header>
@@ -52,7 +62,7 @@ function HeroSection1() {
   return (
     <section className="bg-background py-20" aria-labelledby="hero-heading">
       <div className="px-4 mx-auto max-w-7xl flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
-        {/* Left */}
+
         <div className="flex-1 flex flex-col gap-6">
           <p className="text-sm uppercase tracking-widest text-muted-foreground">Who are we?</p>
           <h1 id="hero-heading" className="text-4xl font-bold">
@@ -63,11 +73,10 @@ function HeroSection1() {
           </p>
           <div className="flex gap-3 mt-4">
             <Button>About</Button>
-            <Button variant="ghost">Explore our drinks<ArrowRight /></Button>
+            <Button variant="ghost">Explore our drinks <ArrowRight /></Button>
           </div>
         </div>
 
-        {/* Right */}
         <div className="flex-1 relative w-full h-80 lg:h-[400px]">
           <Image
             src="/lookback_hero_img.png"
@@ -93,7 +102,7 @@ function BentoGrid1() {
   return (
     <section className="bg-background py-20">
       <div className="px-4 mx-auto max-w-7xl">
-        
+
         <h2 className="text-3xl font-bold">Our Galleries</h2>
         <p className="text-muted-foreground mb-8">
           A collection of our best and amazing customers.
@@ -105,7 +114,6 @@ function BentoGrid1() {
               key={index}
               className="flex flex-col gap-4 rounded-xl border p-4"
             >
-              {/* Equal-size Image Container */}
               <div className="relative w-full aspect-square overflow-hidden rounded-lg">
                 <Image
                   src={item.image}
@@ -127,16 +135,14 @@ function ContactSection1() {
   return (
     <section className="bg-background py-20">
       <div className="px-4 mx-auto max-w-7xl flex flex-col lg:flex-row gap-12 lg:gap-16">
-        
-        {/* Left */}
+
         <div className="flex-1 flex flex-col gap-6">
           <h2 className="text-3xl font-bold">Get in Touch</h2>
           <p className="text-muted-foreground text-lg">
-            Have a question or want to work together? Send us a message and well get back to you.
+            Have a question or want to work together? Send us a message and we'll get back to you.
           </p>
         </div>
 
-        {/* Right - Form */}
         <div className="flex-1">
           <form className="flex flex-col gap-4">
             <input
