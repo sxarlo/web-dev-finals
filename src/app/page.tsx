@@ -139,7 +139,7 @@ function ContactSection1() {
         <div className="flex-1 flex flex-col gap-6">
           <h2 className="text-3xl font-bold">Get in Touch</h2>
           <p className="text-muted-foreground text-lg">
-            Have a question or want to work together? Send us a message and we'll get back to you.
+            Have a question or want to work together? Send us a message and we&#39;ll get back to you.
           </p>
         </div>
 
